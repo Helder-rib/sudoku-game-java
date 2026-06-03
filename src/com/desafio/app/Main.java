@@ -5,7 +5,6 @@ import com.desafio.model.Status;
 import com.desafio.model.Tabuleiro;
 import com.desafio.service.SudokuService;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -45,14 +44,14 @@ public class Main {
 
                     case 7 -> {
                         if (sudokuService.verificarStatus(tabuleiro.getTabuleiro()) == Status.COMPLETO){
-                            System.out.println("Jogo finalizado!");
+                            System.out.println("Jogo finalizado!\n");
                             loop = false;
                         } else {
-                            System.out.println("Preencha todos os espaços com os números corretos.");
+                            System.out.println("Preencha todos os espaços com os números corretos.\n");
                         }
                     }
 
-                    default -> System.out.println("Opção selecionad inválida");
+                    default -> System.out.println("Opção selecionad inválida\n");
                 }
             } catch (IllegalArgumentException | IllegalStateException e){
                 System.out.println(e.getMessage());
