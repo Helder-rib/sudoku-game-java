@@ -43,14 +43,17 @@ public class Main {
                     case 5 -> sudokuService.verificarStatus(tabuleiro.getTabuleiro()).exibirStatus();
                     case 6 -> tabuleiro.limparTabuleiro();
 
-                    case 7 -> loop = false;
-                    default -> {
+                    case 7 -> {
                         if (sudokuService.verificarStatus(tabuleiro.getTabuleiro()) == Status.COMPLETO){
                             System.out.println("Jogo finalizado!");
                             loop = false;
                         } else {
                             System.out.println("Preencha todos os espaços com os números corretos.");
                         }
+                    }
+
+                    default -> {
+                        System.out.println("Opção selecionad inválida");
                     }
                 }
             } catch (IllegalArgumentException | IllegalStateException e){

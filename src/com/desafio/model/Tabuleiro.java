@@ -118,14 +118,20 @@ public class Tabuleiro {
 
     public void exibirTabuleiro(){
         for (int l = 0; l < tabuleiro.length; l++){
+            if (l == 0){
+                System.out.print("\n-------------------------------\n");
+            }
             for (int c = 0; c < tabuleiro.length;c++){
+                if (c == 0){
+                    System.out.print("|");
+                }
                 System.out.print(tabuleiro[l][c]);
-                if (c == 2 || c == 5){
+                if (c == 2 || c == 5 || c == 8){
                     System.out.print("|");
                 }
                 }
-            if (l == 2|| l == 5){
-                System.out.print("\n----------------------------");
+            if (l == 2|| l == 5 || l == 8){
+                System.out.print("\n-------------------------------");
             }
             System.out.println();
         }
