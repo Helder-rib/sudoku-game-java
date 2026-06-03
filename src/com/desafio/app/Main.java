@@ -52,9 +52,7 @@ public class Main {
                         }
                     }
 
-                    default -> {
-                        System.out.println("Opção selecionad inválida");
-                    }
+                    default -> System.out.println("Opção selecionad inválida");
                 }
             } catch (IllegalArgumentException | IllegalStateException e){
                 System.out.println(e.getMessage());

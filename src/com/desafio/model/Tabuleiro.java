@@ -119,7 +119,7 @@ public class Tabuleiro {
     public void exibirTabuleiro(){
         for (int l = 0; l < tabuleiro.length; l++){
             if (l == 0){
-                System.out.print("\n-------------------------------\n");
+                System.out.print("\n┏---------┬---------┬---------┓\n");
             }
             for (int c = 0; c < tabuleiro.length;c++){
                 if (c == 0){
@@ -130,8 +130,11 @@ public class Tabuleiro {
                     System.out.print("|");
                 }
                 }
-            if (l == 2|| l == 5 || l == 8){
-                System.out.print("\n-------------------------------");
+            if (l == 2|| l == 5){
+                System.out.print("\n┝---------┼---------┼---------┥");
+            }
+            if (l == 8){
+                System.out.print("\n┗---------┴---------┴---------┚");
             }
             System.out.println();
         }
