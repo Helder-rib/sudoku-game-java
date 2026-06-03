@@ -1,6 +1,7 @@
 package com.desafio.app;
 
 import com.desafio.model.Celula;
+import com.desafio.model.Status;
 import com.desafio.model.Tabuleiro;
 import com.desafio.service.SudokuService;
 
@@ -28,9 +29,7 @@ public class Main {
             int option = Integer.parseInt(sc.nextLine());
             try{
                 switch(option){
-                    case 1 -> {
-                        tabuleiro.iniciarTabuleiro(args);
-                    }
+                    case 1 -> tabuleiro.iniciarTabuleiro(args);
                     case 2 -> {
                         System.out.println("Insira os dados de insercao (linha, coluna, valor)");
                         String[] valores = sc.nextLine().split(",");
@@ -41,15 +40,17 @@ public class Main {
                         tabuleiro.excluirCelula(sc.nextLine().split(","));
                     }
                     case 4 -> tabuleiro.exibirTabuleiro();
-                    case 5 -> {
-                        sudokuService.verificarStatus(tabuleiro.getTabuleiro()).exibirStatus();
-                    }
-                    case 6 -> {
-                        tabuleiro.limparTabuleiro();
-                    }
+                    case 5 -> sudokuService.verificarStatus(tabuleiro.getTabuleiro()).exibirStatus();
+                    case 6 -> tabuleiro.limparTabuleiro();
+
                     case 7 -> loop = false;
                     default -> {
-                        return;
+                        if (sudokuService.verificarStatus(tabuleiro.getTabuleiro()) == Status.COMPLETO){
+                            System.out.println("Jogo finalizado!");
+                            loop = false;
+                        } else {
+                            System.out.println("Preencha todos os espaços com os números corretos.");
+                        }
                     }
                 }
             } catch (IllegalArgumentException | IllegalStateException e){
