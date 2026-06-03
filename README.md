@@ -3,6 +3,25 @@
 Uma implementação robusta e elegante do clássico jogo Sudoku desenvolvida em Java para o terminal. O projeto foi construído focando em boas práticas de Programação Orientada a Objetos (POO), validações defensivas com Java Streams e uma arquitetura limpa com separação de responsabilidades.
 
 ---
+## 📸 Interface do Tabuleiro (Console UI)
+
+O tabuleiro é renderizado dinamicamente utilizando caracteres de desenho de caixa (Box-Drawing ASCII), garantindo a perfeita identificação dos quadrantes 3x3 tradicionais do Sudoku:
+
+```
+┌───────┬───────┬───────┐
+│ . . . │ . . . │ . . 5 │
+│ . . . │ . . . │ . . . │
+│ . . . │ . . . │ . . . │
+├───────┼───────┼───────┤
+│ . . 4 │ . . . │ . . 7 │
+│ . 9 . │ . . . │ . . . │
+│ . . . │ . . . │ . . . │
+├───────┼───────┼───────┤
+│ . . . │ . . . │ . . 3 │
+│ . . . │ . . . │ . . . │
+│ . . . │ . 7 . │ . . . │
+└───────┴───────┴───────┘
+```
 
 ## 🚀 Funcionalidades
 
