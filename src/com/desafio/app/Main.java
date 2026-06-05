@@ -53,10 +53,13 @@ public class Main {
     }
 
     private static void adicionarNumero() {
-
-        System.out.println("Insira os dados de insercao (linha, coluna, valor)");
-        String[] valores = sc.nextLine().split(",");
-        tabuleiro.inserirNumero(valores);
+        if (sudokuService.jogoIniciado(tabuleiro.getTabuleiro())) {
+            System.out.println("Insira os dados de insercao (linha, coluna, valor)");
+            String[] valores = sc.nextLine().split(",");
+            tabuleiro.inserirNumero(valores);
+        } else {
+            System.out.println("Jogo não iniciado\n");
+        }
     }
 
     private static void removerNumero(){

@@ -95,5 +95,7 @@ public class SudokuService {
         return true;
     }
 
-
+    public Boolean jogoIniciado(Celula[][] tabuleiro) {
+        return Arrays.stream(tabuleiro).anyMatch(celulas -> Arrays.stream(celulas).anyMatch(Celula::isFixed));
+    }
 }
