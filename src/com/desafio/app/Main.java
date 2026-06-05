@@ -16,14 +16,16 @@ public class Main {
         var loop = true;
         while(loop){
             System.out.println("""
-                    Selecione uma opcao:
-                    1 - Iniciar um novo o jogo
+                    Selecione uma opção:
+                    
+                    1 - Iniciar um novo jogo
                     2 - Colocar um novo número
                     3 - Remover um número
-                    4 - Verificar jogo
+                    4 - Exibir tabuleiro
                     5 - Verificar status do jogo
-                    6 - Limpar
-                    7 - finalizar o jogo
+                    6 - Limpar tabuleiro
+                    7 - Finalizar jogo
+                    8 - Sair
                     """);
             int option = Integer.parseInt(sc.nextLine());
             try{
@@ -44,14 +46,17 @@ public class Main {
 
                     case 7 -> {
                         if (sudokuService.verificarStatus(tabuleiro.getTabuleiro()) == Status.COMPLETO){
-                            System.out.println("Jogo finalizado!\n");
-                            loop = false;
+                            System.out.println("Jogo completo!\n");
                         } else {
                             System.out.println("Preencha todos os espaços com os números corretos.\n");
                         }
                     }
+                    case 8 -> {
+                        System.out.println("Saindo do jogo.");
+                        loop = false;
+                    }
 
-                    default -> System.out.println("Opção selecionad inválida\n");
+                    default -> System.out.println("Opção selecionada inválida\n");
                 }
             } catch (IllegalArgumentException | IllegalStateException e){
                 System.out.println(e.getMessage());
