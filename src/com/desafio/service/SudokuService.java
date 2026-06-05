@@ -5,7 +5,9 @@ import com.desafio.model.Status;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SudokuService {
     public SudokuService() {
@@ -92,4 +94,6 @@ public class SudokuService {
         }
         return true;
     }
+
+
 }
